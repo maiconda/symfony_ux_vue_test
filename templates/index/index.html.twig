@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Postagens{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    <div class="example-wrapper">
+        <h1 class="bg-amber-500">Posts✅</h1>
+
+        ultimos posts
+        <ul>
+            {% for post in posts %}
+                <div class="ms-5" {{ vue_component('Hello', { 'name': post.slug }) }}></div>
+                <li>
+                    {{ post.content }} - <a href="{{ path('app_show', {slug: post.slug}) }}">Ler mais</a>
+                </li>
+            {% else %}
+                <h3>Nenhuma postagem encontrada</h3>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
