@@ -24,11 +24,12 @@ class indexController extends AbstractController
     private function getPosts(): array
     {
         return [
-            ['id' => 1, 'title' => 'Title 1', 'content' => 'Content 1', 'slug' => 'postegem teste 1'],
-            ['id' => 2, 'title' => 'Title 2', 'content' => 'Content 2', 'slug' => 'postegem teste 2'],
-            ['id' => 3, 'title' => 'Title 3', 'content' => 'Content 3', 'slug' => 'postegem teste 3'],
-            ['id' => 4, 'title' => 'Title 4', 'content' => 'Content 4', 'slug' => 'postegem teste 4'],
-            ['id' => 5, 'title' => 'Title 5', 'content' => 'Content 5', 'slug' => 'postegem teste 5'],
+            ['id' => 1, 'title' => 'Introduction to Vue.js', 'content' => 'Vue.js is a progressive JavaScript framework for building user interfaces.'],
+            ['id' => 2, 'title' => 'Getting Started with Symfony', 'content' => 'Symfony is a PHP web application framework and a set of reusable PHP components/libraries.'],
+            ['id' => 3, 'title' => 'Using Bootstrap with Vue.js', 'content' => 'Bootstrap is a popular CSS framework that can be integrated with Vue.js for building responsive and attractive web applications.'],
+            ['id' => 4, 'title' => 'Building RESTful APIs with Symfony', 'content' => 'Symfony provides robust support for creating RESTful APIs using bundles like FOSRestBundle.'],
+            ['id' => 5, 'title' => 'Deploying Symfony Applications', 'content' => 'Deploying Symfony applications can be done using various hosting platforms and deployment strategies.'],
         ];
+
     }
 }

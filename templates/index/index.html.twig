@@ -2,7 +2,7 @@
 
 {% block title %}Postagens{% endblock %}
 
-{% block body %}
+{% block main %}
     <style>
         .example-wrapper {
             margin: 1em auto;
@@ -16,20 +16,17 @@
             padding: 2px 6px;
         }
     </style>
+    <h3 class="text-3xl font-bold mt-10 mb-4">Interactive form</h3>
+    <hr class="h-[1px] bg-gray-400 mb-5 border-none"/>
+    <span {{ vue_component('InteractiveForm', {'initialInput': 'teste'}) }}></span>
 
-    <div class="example-wrapper">
-        <h1 class="bg-amber-500">Posts✅</h1>
-
-        ultimos posts
-        <ul>
-            {% for post in posts %}
-                <div class="ms-5" {{ vue_component('Hello', { 'name': post.slug }) }}></div>
-                <li>
-                    {{ post.content }} - <a href="{{ path('app_show', {slug: post.slug}) }}">Ler mais</a>
-                </li>
-            {% else %}
-                <h3>Nenhuma postagem encontrada</h3>
-            {% endfor %}
-        </ul>
+    <h3 class="text-3xl font-bold mt-10 mb-4">Cards</h3>
+    <hr class="h-[1px] bg-gray-400 mb-6 border-none"/>
+    <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        {% for post in posts %}
+            <span {{ vue_component('Card', { 'title': post.title, 'content': post.content, 'url': path('app_show', {slug: post.title}) }) }}></span>
+        {% else %}
+            <h3>Nenhuma postagem encontrada</h3>
+        {% endfor %}
     </div>
 {% endblock %}

@@ -12,7 +12,11 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body >
+    <header class="w-full" {{ vue_component('Navbar') }}>
+    </header>
+    <main class="lg:container lg:mx-auto ps-5 pe-5">
+        {% block main %}{% endblock %}
+    </main>
     </body>
 </html>
