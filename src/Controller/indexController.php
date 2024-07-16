@@ -12,7 +12,13 @@ class indexController extends AbstractController
     public function index(): Response
     {
         $posts = $this->getPosts();
-        return $this->render('index/index.html.twig', compact('posts'));
+        $onClick = function (){
+            echo 'teste';
+        };
+        return $this->render('index/index.html.twig', [
+            'posts' => $posts,
+            'onClick' => $onClick
+        ]);
     }
 
     #[Route('/post/{slug?}', name: 'app_show')]

@@ -16,6 +16,13 @@
             padding: 2px 6px;
         }
     </style>
+
+    <span {{ vue_component('Button', {'onClick': {onClick}}) }}></span>
+
+    <h3 class="text-3xl font-bold mt-10 mb-4">To do list</h3>
+    <hr class="h-[1px] bg-gray-400 mb-5 border-none"/>
+    <span {{ vue_component('ToDoList') }}></span>
+
     <h3 class="text-3xl font-bold mt-10 mb-4">Interactive form</h3>
     <hr class="h-[1px] bg-gray-400 mb-5 border-none"/>
     <span {{ vue_component('InteractiveForm', {'initialInput': 'teste'}) }}></span>
